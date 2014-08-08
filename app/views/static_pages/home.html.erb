@@ -1,2 +1,22 @@
-<h1>Free Puntos</h1>
-<p>This should be your profile page, when you're signed in</p>
+<% if signed_in? %>
+    <div class="row">
+      <aside class="span4">
+        <p>You're signed in!</p>
+      </aside>
+      <div class="span8">
+        <h3>Habits!</h3>
+      </div>
+    </div>
+<% else %>
+    <div class="center hero-unit">
+      <h1>Welcome to Free Puntos!</h1>
+
+      <h2>
+        This is the home page for Free Puntos by Gabe Grazier G'Sell
+      </h2>
+
+      <%= link_to "Sign up now!", signup_path,
+                  class: "btn btn-large btn-primary" %>
+    </div>
+
+<% end %>
