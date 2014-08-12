@@ -13,6 +13,7 @@ class HabitsController < ApplicationController
       flash[:success] = "Habit created!"
       redirect_to root_url
     else
+      @list_items = []
       render 'static_pages/home'
     end
   end

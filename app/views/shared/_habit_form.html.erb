@@ -1,8 +1,13 @@
 <%= form_for(@habit) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="field">
+
+      <%= f.label :task %>
       <%= f.text_area :task, placeholder: "My new daily habit..." %>
-      <%= f.text_field :total_points, placeholder: "10" %>
+
+      <%= f.label :total_points %>
+      <%= f.number_field :total_points, placeholder: "10" %>
+
     </div>
     <%= f.submit "Add", class: "btn btn-large btn-primary" %>
 <% end %>

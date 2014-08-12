@@ -1,6 +1,9 @@
 class StaticPagesController < ApplicationController
   def home
-    @habit = current_user.habits.build if signed_in?
+    if signed_in?
+      @habit = current_user.habits.build
+      @list_items = current_user.list
+    end
   end
 
   def about
