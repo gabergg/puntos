@@ -1,18 +1,20 @@
 <% if signed_in? %>
     <div class="row">
       <aside class="span4">
-        <p>You're signed in!</p>
+        <section>
+          <%= render 'shared/user_info' %>
+        </section>
+        <section>
+          <%= render 'shared/habit_form' %>
+        </section>
       </aside>
-      <div class="span8">
-        <h3>Habits!</h3>
-      </div>
     </div>
 <% else %>
     <div class="center hero-unit">
       <h1>Welcome to Free Puntos!</h1>
 
       <h2>
-        This is the home page for Free Puntos by Gabe Grazier G'Sell
+        Free Puntos is a daily habit tracker by Gabe Grazier G'Sell
       </h2>
 
       <%= link_to "Sign up now!", signup_path,

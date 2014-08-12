@@ -15,7 +15,10 @@ describe 'User pages' do
     let!(:h1) { FactoryGirl.create(:habit, user: user, task: "Eat Food", total_points: 20) }
     let!(:h2) { FactoryGirl.create(:habit, user: user, task: "Drink drinks", total_points: 10) }
 
-    before { visit user_path(user) }
+    before do
+      sign_in user
+      visit user_path(user)
+    end
 
     it { should have_content("Habits") }
     it { should have_title("Habits") }

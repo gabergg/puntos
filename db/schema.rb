@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140812062824) do
+ActiveRecord::Schema.define(version: 20140812080322) do
 
   create_table "habits", force: true do |t|
     t.string   "task"
     t.integer  "user_id"
     t.integer  "total_points"
     t.integer  "completed_points"
-    t.boolean  "complete"
+    t.boolean  "complete",         default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
