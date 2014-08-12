@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140808075224) do
+ActiveRecord::Schema.define(version: 20140812062824) do
+
+  create_table "habits", force: true do |t|
+    t.string   "task"
+    t.integer  "user_id"
+    t.integer  "total_points"
+    t.integer  "completed_points"
+    t.boolean  "complete"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "habits", ["user_id", "created_at", "complete"], name: "index_habits_on_user_id_and_created_at_and_complete"
 
   create_table "users", force: true do |t|
     t.string   "name"
