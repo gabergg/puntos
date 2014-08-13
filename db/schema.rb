@@ -11,19 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140812080322) do
+ActiveRecord::Schema.define(version: 20140813070319) do
+
+  create_table "daily_habits", force: true do |t|
+    t.date    "date"
+    t.integer "user_id"
+    t.integer "habit_id"
+    t.boolean "completed", default: false
+  end
+
+  add_index "daily_habits", ["user_id", "date", "completed"], name: "index_daily_habits_on_user_id_and_date_and_completed"
 
   create_table "habits", force: true do |t|
     t.string   "task"
     t.integer  "user_id"
     t.integer  "total_points"
-    t.integer  "completed_points"
-    t.boolean  "complete",         default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "category"
   end
 
-  add_index "habits", ["user_id", "created_at", "complete"], name: "index_habits_on_user_id_and_created_at_and_complete"
+  add_index "habits", ["category"], name: "index_habits_on_category"
+  add_index "habits", ["user_id", "created_at"], name: "index_habits_on_user_id_and_created_at_and_complete"
 
   create_table "users", force: true do |t|
     t.string   "name"
