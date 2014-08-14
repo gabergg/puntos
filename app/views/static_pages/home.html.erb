@@ -1,4 +1,9 @@
 <% if signed_in? %>
+    <script>
+        $(function() {
+            $( "#datepicker" ).datepicker();
+        });
+    </script>
     <div class="row">
       <aside class="span4">
         <section>
@@ -10,6 +15,7 @@
       </aside>
       <div class="span8">
         <h3>My Day</h3>
+        <p>Date: <input type="text" id="datepicker"></p>
         <%= render 'shared/list' %>
       </div>
     </div>
