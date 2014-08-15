@@ -20,16 +20,21 @@
       </div>
     </div>
 <% else %>
-  <%= image_tag("frontpage.png", :id =>"home_banner" )%>
-    <!--<div class="center hero-unit">
+<div class="row-fluid">
+<div class="words">  
       <h1>Welcome to Free Puntos!</h1>
 
       <h2>
         Free Puntos is a daily habit tracker by Gabe Grazier G'Sell
       </h2>
-
+      <div class="text-center">
       <%= link_to "Sign up now!", signup_path,
                   class: "btn btn-large btn-primary" %>
-    !--></div>
+    </div>
+    </div>
+    <%= image_tag("frontpage.png", :id =>"home_banner" )%>
+    
+  </div>
+
 
 <% end %>

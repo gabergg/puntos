@@ -52,7 +52,7 @@ h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
+  #text-align: center;
   font-weight: normal;
   color: $grayLight;
 }
@@ -156,4 +156,14 @@ footer {
 }
 .container{
   margin-top:5em;
+}
+
+.words{
+  display: inline-block;
+  position: absolute;
+  color:#333333;
+  text-align:left;
+  margin-left:65em;
+  margin-top:15em;
+
 }
