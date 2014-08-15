@@ -67,18 +67,56 @@ p {
 
 #logo {
   float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
+  margin: 0px 10px 10px 10px;
+  font-size: 1.5em;
   letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
+  width: 1.75em;
+  height: auto;
   line-height: 1;
   &:hover {
     color: white;
     text-decoration: none;
   }
+}
+
+#logo_text{
+  float: left;
+  margin: 0px 10px 10px 10px;
+  font-size: 1.3em;
+  padding-top:7px;
+  color: #0099FF;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+  width: 10em;
+  height: auto;
+  line-height: 1;
+  &:hover {
+    color: blue;
+    text-decoration: none;
+  }
+}
+
+/* nav bad */
+.topmargin {
+  margin-top:1.5em;
+}
+ul.nav a:link, a:visited {
+    display: block;
+    width: 120px;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover {
+      background-color: #D1E0E0;
+      text-decoration: none;
+    }
+}
+.hero-unit{
+  margin-top: 5em;
 }
 
 /* footer */
@@ -107,6 +145,15 @@ footer {
   }
 }
 
-/* date picker */
-
-
+/* homepage */
+#home_banner {
+  max-width:100%;
+}
+#navcontainer {
+  width:940px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.container{
+  margin-top:5em;
+}
