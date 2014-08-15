@@ -67,10 +67,9 @@ p {
 
 #logo {
   float: left;
-  margin: 10px 10px 20px 10px;
+  margin: 0px 10px 10px 10px;
   font-size: 1.5em;
   letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
   width: 1.75em;
   height: auto;
@@ -83,12 +82,12 @@ p {
 
 #logo_text{
   float: left;
-  margin: 19px 10px 20px 10px;
+  margin: 0px 10px 10px 10px;
   font-size: 1.3em;
+  padding-top:7px;
   color: #0099FF;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
   width: 10em;
   height: auto;
@@ -146,6 +145,15 @@ footer {
   }
 }
 
-/* date picker */
-
-
+/* homepage */
+#home_banner {
+  max-width:100%;
+}
+#navcontainer {
+  width:940px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.container{
+  margin-top:5em;
+}
