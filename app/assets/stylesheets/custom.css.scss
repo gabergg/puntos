@@ -157,3 +157,13 @@ footer {
 .container{
   margin-top:5em;
 }
+
+/* misc */
+.no_hover:hover {
+  background-color: transparent;
+}
+
+#habit_task:hover {
+  opacity:1;
+  text-decoration: none;
+}

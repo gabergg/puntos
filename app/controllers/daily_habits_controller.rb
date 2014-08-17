@@ -1,18 +1,14 @@
-class HabitsController < ApplicationController
+class DailyHabitsController < ApplicationController
   before_action :signed_in_user, only: [:create, :destroy]
-  before_action :correct_user,   only: :destroy
+  before_action :correct_user,   only: [:create, :destroy]
 
   def show
     @user = User.find(params[:id])
     @habits = @user.habits
   end
 
-  def show_day
-    @user = User.find(params[:id])
-  end
-
   def create
-    @habit = current_user.habits.build(habit_params)
+    @habit = current_user.daily_habits.build(params[:daily_habits].merge(habit_id: ))
     if @habit.save
       flash[:success] = "Habit created!"
       redirect_to root_url

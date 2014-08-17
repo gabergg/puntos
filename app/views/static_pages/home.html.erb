@@ -1,7 +1,7 @@
 <% if signed_in? %>
     <script>
         $(function() {
-            $( "#datepicker" ).datepicker();
+            $( "#datepicker" ).datepicker({ maxDate: 0, defaultDate: 0});
         });
     </script>
     <div class="container">
@@ -17,9 +17,9 @@
       <div class="span8">
         <h3>My Day</h3>
         <section>
-          <%= render 'shared/date_form' %>
+          <%#= render 'shared/date_form' %>
         </section>
-        <p>Date: <input type="text" id="datepicker"></p>
+        <p>Date: <input type="text" id="datepicker" value="<%= Date.today.strftime("%m/%d/%Y") %>"></p>
         <%= render 'shared/list' %>
       </div>
     </div>

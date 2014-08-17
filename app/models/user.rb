@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :habits, dependent: :destroy
+  has_many :daily_habits, dependent: :destroy
 
   before_save { self.email = email.downcase }
   before_create :create_remember_token
