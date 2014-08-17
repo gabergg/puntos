@@ -4,6 +4,7 @@
             $( "#datepicker" ).datepicker();
         });
     </script>
+    <div class="container">
     <div class="row">
       <aside class="span4">
         <section>
@@ -15,9 +16,13 @@
       </aside>
       <div class="span8">
         <h3>My Day</h3>
+        <section>
+          <%= render 'shared/date_form' %>
+        </section>
         <p>Date: <input type="text" id="datepicker"></p>
         <%= render 'shared/list' %>
       </div>
+    </div>
     </div>
 <% else %>
 <div class="row-fluid">
