@@ -1,15 +1,15 @@
 class DailyHabitsController < ApplicationController
-  before_action :signed_in_user, only: [:create, :destroy]
-  before_action :correct_user,   only: [:create, :destroy]
+  #before_action :signed_in_user, only: [:create, :destroy]
+  #before_action :correct_user,   only: [:create, :destroy]
 
   def show
     @user = User.find(params[:id])
-    @habits = @user.habits
+    @daily_habits = @user.daily_habits
   end
 
   def create
-    @habit = current_user.daily_habits.build(params[:daily_habits].merge(habit_id: ))
-    if @habit.save
+    @daily_habit = current_user.daily_habits.build(daily_habit_params)
+    if @daily_habit.save
       flash[:success] = "Habit created!"
       redirect_to root_url
     else
@@ -19,18 +19,17 @@ class DailyHabitsController < ApplicationController
   end
 
   def destroy
-    @habit.destroy
-    redirect_to root_url
+    @daily_habit.destroy
   end
 
   private
 
-  def habit_params
-    params.require(:habit).permit(:task, :total_points)
+  def daily_habit_params
+    params.require(:daily_habit)
   end
 
   def correct_user
-    @habit = current_user.habits.find_by(id: params[:id])
+    @daily_habit = current_user.daily_habits.find_by(id: params[:id])
     redirect_to root_url if @habit.nil?
   end
 end

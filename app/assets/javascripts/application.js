@@ -15,3 +15,7 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+    $( "#daily_habit_date" ).datepicker({ maxDate: 0, defaultDate: 0});
+});

@@ -7,10 +7,6 @@ class HabitsController < ApplicationController
     @habits = @user.habits
   end
 
-  def show_day
-    @user = User.find(params[:id])
-  end
-
   def create
     @habit = current_user.habits.build(habit_params)
     if @habit.save

@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   def home
     if signed_in?
       @habit = current_user.habits.build
-      @list_items = current_user.list
+      @daily_habit = current_user.daily_list(Date.current).first
     end
   end
 

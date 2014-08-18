@@ -1,10 +1,9 @@
-<%= form_for(@daily_habits) do |f| %>
+<%= form_for(@daily_habit) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="field">
 
-      <p>Date: <input type="text" id="datepicker"></p>
       <%= f.label :date %>
-      <%= f.text_field :date, value: Date.current %>
+      <%= f.text_field :date, value: Date.today.strftime("%m/%d/%Y") %>
 
     </div>
     <%= f.submit "Go", class: "btn btn-primary" %>
