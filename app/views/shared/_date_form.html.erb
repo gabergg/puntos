@@ -1,3 +1,11 @@
+<div class="field">
+  <%= form_tag("/users", method: "get") do %>
+      <%= label_tag(:date, "Date:") %>
+      <%= text_field_tag(:date, Date.today.strftime("%m/%d/%Y")) %>
+      <%= submit_tag("Go", class: "btn btn-primary") %>
+  <% end %>
+</div>
+
 <%= form_for(@daily_habit) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="field">

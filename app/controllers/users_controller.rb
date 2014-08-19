@@ -50,13 +50,6 @@ class UsersController < ApplicationController
                                  :password_confirmation)
   end
 
-  def next_day_habits
-    @habits = current_user.habits.find_by(id: params[:id])
-    @habits.each do |habit|
-      DailyHabit.create(date: DateTime.now.tomorrow.to_date, user_id: current_user.id, habit_id: habit.id, completed: false)
-    end
-  end
-
   #Before Filters
 
   def correct_user

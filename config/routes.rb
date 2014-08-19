@@ -1,7 +1,7 @@
 Puntos::Application.routes.draw do
-  resources :users
-  resources :sessions,   only: [:new, :create, :destroy]
-  resources :habits,     only: [:show, :create, :destroy]
+  resources :users,            only: [:new, :create, :destroy, :update, :edit]
+  resources :sessions,         only: [:new, :create, :destroy]
+  resources :habits,           only: [:show, :create, :destroy]
   resources :daily_habits,     only: [:show, :create, :destroy]
 
   root "static_pages#home"

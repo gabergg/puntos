@@ -18,4 +18,5 @@
 
 $(function() {
     $( "#daily_habit_date" ).datepicker({ maxDate: 0, defaultDate: 0});
+    $( "#date" ).datepicker({ maxDate: 0, defaultDate: 0});
 });

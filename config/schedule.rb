@@ -20,6 +20,6 @@
 # Learn more: http://github.com/javan/whenever
 
 every 1.day, :at => '12:10am' do
-  runner "Habit.next_day_habits"
+  rake 'db:daily'
 end
 
