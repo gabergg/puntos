@@ -18,6 +18,11 @@ class HabitsController < ApplicationController
     end
   end
 
+  def daily_list
+    flash[:notice] = params[:id]
+    redirect_to root_url
+  end
+
   def destroy
     @habit.destroy
     redirect_to root_url
