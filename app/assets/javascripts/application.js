@@ -17,6 +17,5 @@
 //= require_tree .
 
 $(function() {
-    $( "#daily_habit_date" ).datepicker({ maxDate: 0, defaultDate: 0, dateFormat:"mm-dd-yy"});
-    $( "#date" ).datepicker({ maxDate: 0, defaultDate: 0, dateFormat:"mm-dd-yy"});
+    $( "#date" ).datepicker({ maxDate: 0, defaultDate: 0, dateFormat:"mm/dd/yy"});
 });

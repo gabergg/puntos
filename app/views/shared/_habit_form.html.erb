@@ -3,9 +3,6 @@
     <div class="field">
 
       <%= f.label :task %>
-      <%= f.date_field :task, {:order => [:month, :day, :year],:value => Date.current, :end_year => '2020'} %>
-
-      <%= f.label :task %>
       <%= f.text_area :task, placeholder: "My new daily habit..." %>
 
       <%= f.label :total_points %>

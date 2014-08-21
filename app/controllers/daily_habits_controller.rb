@@ -1,16 +1,21 @@
 class DailyHabitsController < ApplicationController
-  #before_action :signed_in_user, only: [:create, :destroy]
-  #before_action :correct_user,   only: [:create, :destroy]
+  before_action :signed_in_user, only: [:create, :destroy]
+  before_action :correct_user,   only: [:create, :destroy]
 
   def show
     @user = User.find(params[:id])
     @daily_habits = @user.daily_habits
   end
 
+  def daily
+    session[:date] = params[:date]
+    redirect_to root_url
+  end
+
   def create
     @daily_habit = current_user.daily_habits.build(daily_habit_params)
     if @daily_habit.save
-      flash[:success] = "Habit created!"
+      flash[:success] = @daily_habit.task#"Habit created!"
       redirect_to root_url
     else
       @list_items = []

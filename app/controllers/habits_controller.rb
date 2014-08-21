@@ -9,6 +9,7 @@ class HabitsController < ApplicationController
 
   def create
     @habit = current_user.habits.build(habit_params)
+    @daily_items = DailyHabit.daily_list(current_user.id, session[:date])
     if @habit.save
       flash[:success] = "Habit created!"
       redirect_to root_url
@@ -16,11 +17,6 @@ class HabitsController < ApplicationController
       @list_items = []
       render 'static_pages/home'
     end
-  end
-
-  def daily_list
-    flash[:notice] = params[:id]
-    redirect_to root_url
   end
 
   def destroy

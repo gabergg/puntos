@@ -1,18 +1,5 @@
-<div class="field">
-  <%= form_tag("/users", method: "get") do %>
-      <%= label_tag(:date, "Date:") %>
-      <%= text_field_tag(:date, Date.today.strftime("%m/%d/%Y")) %>
-      <%= submit_tag("Go", class: "btn btn-primary") %>
-  <% end %>
-</div>
-
-<%= form_for(@daily_habit) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    <div class="field">
-
-      <%= f.label :date %>
-      <%= f.text_field :date, value: Date.today.strftime("%m/%d/%Y") %>
-
-    </div>
-    <%= f.submit "Go", class: "btn btn-primary" %>
+<%= form_tag({controller: "daily_habits", action: "daily"}, method: "get") do %>
+    <%= label_tag(:date, "Date:") %>
+    <%= text_field_tag(:date, session[:date]) %>
+    <%= submit_tag("Go", class: "btn btn-primary") %>
 <% end %>
