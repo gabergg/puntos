@@ -15,3 +15,7 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+    $( "#date" ).datepicker({ maxDate: 0, defaultDate: 0, dateFormat:"mm/dd/yy"});
+});

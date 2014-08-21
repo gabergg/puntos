@@ -1,0 +1,6 @@
+<% if @daily_items.any? %>
+    <p>lawl</p>
+    <ul class="habits">
+      <%= render partial: 'shared/daily_list_item', collection: @daily_items, :as => :item %>
+    </ul>
+<% end %>

@@ -1,13 +1,5 @@
-<%= form_for(@daily_habits) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    <div class="field">
-
-      <%= f.label :task %>
-      <%= f.text_area :task, placeholder: "My new daily habit..." %>
-
-      <%= f.label :total_points %>
-      <%= f.number_field :total_points, placeholder: "10" %>
-
-    </div>
-    <%= f.submit "Add", class: "btn btn-large btn-primary" %>
+<%= form_tag({controller: "daily_habits", action: "daily"}, method: "get") do %>
+    <%= label_tag(:date, "Date:") %>
+    <%= text_field_tag(:date, session[:date]) %>
+    <%= submit_tag("Go", class: "btn btn-primary") %>
 <% end %>

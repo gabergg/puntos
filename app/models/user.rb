@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :habits, dependent: :destroy
+  has_many :daily_habits, dependent: :destroy
 
   before_save { self.email = email.downcase }
   before_create :create_remember_token
@@ -11,10 +12,6 @@ class User < ActiveRecord::Base
   #Note that presence validation for password and password_confirmation are added by has_secure_password
 
   has_secure_password
-
-  def list
-    Habit.where("user_id = ?", id)
-  end
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64

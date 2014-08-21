@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user, only: [:show, :index, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:show, :edit, :update, :destroy]
   before_action :correct_user,   only: [:show, :edit, :update]
-
-  def index
-    @users = User.paginate(page: params[:page])
-  end
 
   def new
     @user = User.new
@@ -20,7 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to Free Puntos!"
-      redirect_to @user
+      redirect_to root_path
     else
       render 'new'
     end
@@ -33,7 +29,7 @@ class UsersController < ApplicationController
   def update
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
-      redirect_to @user
+      redirect_to root_path
     else
       render 'edit'
     end

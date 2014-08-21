@@ -9,6 +9,7 @@ class HabitsController < ApplicationController
 
   def create
     @habit = current_user.habits.build(habit_params)
+    @daily_items = DailyHabit.daily_list(current_user.id, session[:date])
     if @habit.save
       flash[:success] = "Habit created!"
       redirect_to root_url
