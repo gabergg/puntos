@@ -12,6 +12,7 @@ class HabitsController < ApplicationController
     @daily_items = DailyHabit.daily_list(current_user.id, session[:date])
     if @habit.save
       flash[:success] = "Habit created!"
+      DailyHabit.create(date: Date.today, user_id: current_user.id, habit_id: @habit.id)
       redirect_to root_url
     else
       @list_items = []

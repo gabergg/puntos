@@ -2,7 +2,7 @@ Puntos::Application.routes.draw do
   resources :users,            only: [:new, :create, :destroy, :update, :edit]
   resources :sessions,         only: [:new, :create, :destroy]
   resources :habits,           only: [:show, :create, :destroy]
-  resources :daily_habits,     only: [:show, :create, :destroy]
+  resources :daily_habits,     only: [:show, :destroy]
 
   root "static_pages#home"
   match '/signup',  to: 'users#new',            via: 'get'

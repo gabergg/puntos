@@ -1,6 +1,6 @@
 class DailyHabitsController < ApplicationController
-  before_action :signed_in_user, only: [:create, :destroy]
-  before_action :correct_user,   only: [:create, :destroy]
+  #before_action :signed_in_user, only: [:create, :destroy]
+  #before_action :correct_user,   only: [:create, :destroy]
 
   def show
     @user = User.find(params[:id])
@@ -12,6 +12,7 @@ class DailyHabitsController < ApplicationController
     redirect_to root_url
   end
 
+=begin
   def create
     @daily_habit = current_user.daily_habits.build(daily_habit_params)
     if @daily_habit.save
@@ -22,6 +23,7 @@ class DailyHabitsController < ApplicationController
       render 'static_pages/home'
     end
   end
+=end
 
   def destroy
     @daily_habit.destroy
