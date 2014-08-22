@@ -10,8 +10,4 @@ class DailyHabit < ActiveRecord::Base
     DailyHabit.joins(:habit).select("daily_habits.*, habits.task").where(user_id: user_id, date: Date.strptime(date, '%m/%d/%Y'))
   end
 
-  def self.generate_daily_habits
-
-  end
-
 end
