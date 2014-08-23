@@ -157,13 +157,17 @@ footer {
 .container{
   margin-top:5em;
 }
-
+.wordcontainer {
+  width:900px;
+}
 .words{
   display: inline-block;
-  position: absolute;
   color:#333333;
-  text-align:left;
-  margin-left:65em;
-  margin-top:15em;
-
+  margin: 0;
+  position: absolute;
+  top: 42%;
+  left: 75%;
+  line-height:2em;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
