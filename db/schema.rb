@@ -13,14 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20140813070319) do
 
-  create_table "daily_habits.rake", force: true do |t|
+  create_table "daily_habits", force: true do |t|
     t.date    "date"
     t.integer "user_id"
     t.integer "habit_id"
     t.boolean "completed", default: false
   end
 
-  add_index "daily_habits.rake", ["user_id", "date", "completed"], name: "index_daily_habits_on_user_id_and_date_and_completed"
+  add_index "daily_habits", ["user_id", "date", "completed"], name: "index_daily_habits_on_user_id_and_date_and_completed"
 
   create_table "habits", force: true do |t|
     t.string   "task"
